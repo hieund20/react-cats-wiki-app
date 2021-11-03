@@ -1,0 +1,180 @@
+.home {
+    // border: 1px solid blue;
+    width: 80%;
+    margin: 0 auto;
+    &-hero {
+        height: 400px;
+        background-image: url("../../images/HeroImagesm.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+    }
+    &-most {
+        // border: 1px solid blue;
+        height: 510px;
+        background: #e3e1dc;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+        padding-top: 2rem;
+        margin-bottom: 100px;
+        &-container {
+            width: 85%;
+            margin: 0 auto;
+            // border: 1px solid blue;
+            & > div:nth-child(1) {
+                width: 250px;
+                margin-bottom: 36px;
+                & > span {
+                    display: block;
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 22px;
+                    /* identical to box height */
+                    color: #291507;
+                }
+                & > hr {
+                    border: 3px solid #4d270c;
+                    margin-top: 8px;
+                    border-radius: 77px;
+                    width: 59.18px;
+                    display: block;
+                    float: left;
+                }
+            }
+            & > div:nth-child(2) {
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: space-between;
+                & > div:nth-child(1) {
+                    width: 55%;
+                    // border: 2px solid blue;
+                    & > span {
+                        font-family: Montserrat;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 48px;
+                        line-height: 59px;
+
+                        color: #291507;
+                    }
+                }
+                & > div:nth-child(2) {
+                    // border: 2px solid blue;
+                    // width: 30%;
+                    & > a {
+                        text-decoration: none;
+                        font-family: Montserrat;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 22px;
+                        /* identical to box height */
+                        text-align: right;
+                        color: rgba(41, 21, 7, 0.6);
+
+                        position: relative;
+                        & > div {
+                            display: flex;
+                            align-items: center;
+                            // border: 1px solid blue;
+                        }
+                    }
+                }
+            }
+            & > div:nth-child(3) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                & > .card {
+                    border-radius: 24px;
+                    text-align: center;
+                    width: 200px;
+                    height: 200px;
+                    & > img {
+                        // border: 1px solid blue;
+                        border-radius: 24px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        margin-bottom: 10px;
+                    }
+                    & > div {
+                        & > span {
+                            display: inline-block;
+                            font-family: Montserrat;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 18px;
+                            line-height: 22px;
+                            /* identical to box height */
+                            color: #291507;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-benefits {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid blue;
+
+        & > div:nth-child(1) {
+            width: 40%;
+            // border: 1px solid blue;
+            & > div:nth-child(1) {
+                // border: 1px solid blue;
+                & > hr {
+                    border: 3px solid #4d270c;
+                    margin-top: 8px;
+                    border-radius: 77px;
+                    width: 59.18px;
+                    display: block;
+                    margin-left: 0;
+                    margin-right: auto;
+                }
+            }
+            & > div:nth-child(2) {
+                // border: 1px solid blue;
+                & > span {
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 40px;
+                    line-height: 59px;
+                    color: #291507;
+                }
+            }
+            & > div:nth-child(3) {
+                // border: 1px solid blue;
+                & > span {
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: #291507;
+                }
+            }
+            & > div:nth-child(4) {
+                // border: 1px solid blue;
+                color: rgba(41, 21, 7, 0.6);
+                display: flex;
+                align-items: center;
+                & > span:nth-child(1) {
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
