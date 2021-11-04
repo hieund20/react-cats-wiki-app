@@ -11,6 +11,7 @@ import {
 import Top from './page/Top';
 import Benefits from './page/Benefits';
 import CatDetails from './page/CatDetails';
+import Footer from './sharedComponents/Footer';
 
 function App() {
   const [mostBreeds, setMostBreeds] = useState([])
@@ -71,6 +72,7 @@ function App() {
             <CatDetails />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

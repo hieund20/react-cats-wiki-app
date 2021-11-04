@@ -1,0 +1,29 @@
+.footer {
+    width: 80%;
+    height: 100px;
+
+    margin: 0 auto;
+    background: #000000;
+    border-top-left-radius: 42px;
+    border-top-right-radius: 42px;
+
+    &-container {
+        width: 86%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > div:nth-child(2) {
+            & > span {
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 22px;
+                /* identical to box height */
+
+                color: #ffffff;
+            }
+        }
+    }
+}
