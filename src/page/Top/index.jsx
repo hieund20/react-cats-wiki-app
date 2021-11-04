@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
+import { getCatDetails } from '../../apis/getCatDetails';
 
 Top.propTypes = {
-    mostBreeds: PropTypes.array
 };
 
-Top.defaultProps = {
-    mostBreeds: []
-};
 
 function Top(props) {
-    const { mostBreeds } = props
+    const [mostBreeds, setMostBreeds] = useState([])
+
+
+    useEffect(() => {
+        const queryParams = 'limit=10&page=0';
+        getCatDetails(queryParams)
+            .then((res) => {
+                console.log('test top');
+                console.log(res.data);
+                setMostBreeds(res.data);
+            })
+    }, [])
 
     return (
         <div className="top">

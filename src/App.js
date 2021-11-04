@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { getCatDetails } from './apis/getCatDetails';
+import { useEffect, useState } from 'react';
+import { getAllBreeds, getCatDetails } from './apis/getCatDetails';
 import './App.scss';
 import Home from './page/Home';
 import Header from './sharedComponents/Header';
@@ -9,18 +9,18 @@ import {
 } from 'react-router-dom';
 
 import Top from './page/Top';
+import Benefits from './page/Benefits';
+import CatDetails from './page/CatDetails';
 
 function App() {
   const [mostBreeds, setMostBreeds] = useState([])
+  const [allBreeds, setAllBreeds] = useState([])
   const [filters, setFilters] = useState({
     limit: 4,
     page: 0
   })
-  const prevLimit = useRef(filters.limit);
 
   console.log('current limit', filters.limit);
-  console.log('prev limit', prevLimit.current);
-
 
   useEffect(() => {
     const queryParams = queryString.stringify(filters, {
@@ -33,12 +33,13 @@ function App() {
       })
   }, [filters])
 
-  const handleSeeMore = () => {
-    setFilters({
-      ...filters,
-      limit: 10
-    })
-  }
+  //Get all breeds to fill search box
+  useEffect(() => {
+    getAllBreeds()
+      .then((res) => {
+        setAllBreeds(res.data);
+      })
+  }, [])
 
   const handleBackToHome = () => {
     setFilters({
@@ -57,13 +58,17 @@ function App() {
           <Route path="/" exact>
             <Home
               mostBreeds={mostBreeds}
-              onSeeMore={handleSeeMore}
+              allBreeds={allBreeds}
             />
           </Route>
           <Route path="/top">
-            <Top
-              mostBreeds={mostBreeds}
-            />
+            <Top />
+          </Route>
+          <Route path="/benefits">
+            <Benefits />
+          </Route>
+          <Route path="/:id">
+            <CatDetails />
           </Route>
         </Switch>
       </Router>

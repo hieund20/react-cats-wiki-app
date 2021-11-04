@@ -2,28 +2,47 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 import { Link } from 'react-router-dom';
+import { TextField, Autocomplete } from '@mui/material';
 
 Home.propTypes = {
     mostBreeds: PropTypes.array,
-    onSeeMore: PropTypes.func,
+    allBreeds: PropTypes.array
 };
 
 Home.defaultProps = {
     mostBreeds: [],
-    onSeeMore: null
+    allBreeds: []
 };
 
 function Home(props) {
-    const { mostBreeds, onSeeMore } = props
+    const { mostBreeds, allBreeds } = props
 
-    const handleSeeMore = () => {
-        if (!onSeeMore) return;
-        onSeeMore();
-    }
+    // const handleChange = (e) => {
+
+    // }
+
+    // const handleSeeMore = () => {
+    //     if (!onSeeMore) return;
+    //     onSeeMore();
+    // }
 
     return (
         <div className='home'>
             <div className='home-hero'>
+                <Autocomplete
+                    disablePortal
+                    id="combo-box-demo"
+                    className="combo-box"
+                    freeSolo
+                    options={allBreeds}
+                    getOptionLabel={(option) => option.name}
+                    renderOption={(props, option) => (
+                        <Link to={`/${option.id}`} {...props}>{option.name}</Link>
+                    )}
+                    onChange={(e, value) => console.log(value)}
+                    sx={{ width: 300 }}
+                    renderInput={(params) => <TextField {...params} label="Enter your breed" />}
+                />
             </div>
             <div className="home-most">
                 <div className="home-most-container">
@@ -37,7 +56,7 @@ function Home(props) {
                         </div>
                         <div>
                             <Link to="/top">
-                                <div onClick={() => handleSeeMore()}>
+                                <div>
                                     <span>SEE MORE</span>
                                     <span className="material-icons">
                                         trending_flat
@@ -74,14 +93,22 @@ function Home(props) {
                         </p>
                     </div>
                     <div>
-                        <span>READ MORE</span>
-                        <span className="material-icons">
-                            trending_flat
-                        </span>
+                        <Link to="/benefits">
+                            <span>READ MORE</span>
+                            <span className="material-icons">
+                                trending_flat
+                            </span>
+                        </Link>
                     </div>
                 </div>
                 <div>
-
+                    <div>
+                        <img src="../../images/cat1/png" alt="cat" />
+                        <img src="../../images/cat3.png" alt="cat" />
+                    </div>
+                    <div>
+                        <img src="../../images/cat2.png" alt="cat" />
+                    </div>
                 </div>
             </div>
         </div>

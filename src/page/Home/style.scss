@@ -12,6 +12,11 @@
 
         border-top-right-radius: 25px;
         border-top-left-radius: 25px;
+        & > .combo-box {
+            border: none;
+            background: #ffffff;
+            border-radius: 59px;
+        }
     }
     &-most {
         // border: 1px solid blue;
@@ -174,6 +179,23 @@
                     font-size: 18px;
                     line-height: 22px;
                 }
+            }
+        }
+        & > div:nth-child(2) {
+            border: 1px solid blue;
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            & > div:nth-child(1) {
+                border: 1px solid blue;
+                width: 45%;
+                & > img:nth-child(1) {
+                    width: 100%;
+                }
+            }
+            & > div:nth-child(2) {
+                border: 1px solid blue;
+                width: 45%;
             }
         }
     }
