@@ -6,6 +6,7 @@ import { TextField, Autocomplete } from '@mui/material';
 import cat1 from '../../images/cat1.png'
 import cat2 from '../../images/cat2.png'
 import cat3 from '../../images/cat3.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 Home.propTypes = {
@@ -77,7 +78,10 @@ function Home(props) {
                         {
                             mostBreeds.map((breed) => (
                                 <div className="card">
-                                    <img src={breed.image.url} alt="" />
+                                    <LazyLoadImage
+                                        src={breed.image.url}
+                                        alt=""
+                                    />
                                     <div>
                                         <span>{breed.name}</span>
                                     </div>
@@ -114,19 +118,28 @@ function Home(props) {
                         <div>
                             <div>
                                 <div>
-                                    <img src={cat1} alt="cat" />
+                                    <LazyLoadImage
+                                        src={cat1}
+                                        alt="cat"
+                                    />
                                 </div>
                             </div>
                             <div>
                                 <div></div>
                                 <div>
-                                    <img src={cat2} alt="cat" />
+                                    <LazyLoadImage
+                                        src={cat2}
+                                        alt="cat"
+                                    />
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <img src={cat3} alt="cat" />
+                                <LazyLoadImage
+                                    src={cat3}
+                                    alt="cat"
+                                />
                             </div>
                         </div>
                     </div>

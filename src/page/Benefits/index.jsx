@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './style.scss';
 import { benefits, explain } from '../../data/content';
 import { FcLike } from 'react-icons/fc'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 Benefits.propTypes = {
 
@@ -15,7 +16,10 @@ function Benefits(props) {
                 <span>Benefits</span>
             </div>
             <div>
-                <img src="https://cdn2.thecatapi.com/images/VXppGG5rK.jpg" alt="" />
+                <LazyLoadImage
+                    src="https://cdn2.thecatapi.com/images/VXppGG5rK.jpg"
+                    alt=""
+                />
             </div>
             <div>
                 <p>{explain}</p>
@@ -24,7 +28,9 @@ function Benefits(props) {
                 {
                     benefits.map((benefit) => (
                         <div>
-                            <FcLike />
+                            <div>
+                                <FcLike />
+                            </div>
                             <span>{benefit}</span>
                         </div>
                     ))

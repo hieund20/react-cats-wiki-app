@@ -2,18 +2,38 @@
     width: 80%;
     margin: 0 auto;
     &-top {
-        border: 1px solid blue;
+        // border: 1px solid blue;
         display: flex;
         justify-content: space-between;
         &-img {
-            border: 1px solid blue;
-            width: 23%;
-            & > img {
-                width: 100%;
+            // border: 1px solid blue;
+            display: flex;
+            // align-items: center;
+            & > div:nth-child(1) {
+                position: relative;
+                top: 1.3rem;
+                left: 1.4rem;
+                z-index: -1;
+                width: 30px;
+                height: 196px;
+                background: #dec68b;
+                border-radius: 14px;
+            }
+            & > div:nth-child(2) {
+                width: 235px;
+                height: 235px;
+                // border: 1px solid blue;
+                border-radius: 24px;
+                & > img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 24px;
+                }
             }
         }
         &-details {
-            border: 1px solid blue;
+            // border: 1px solid blue;
             width: 70%;
             &-name {
                 & > span {
@@ -37,6 +57,7 @@
                 }
             }
             &-temp {
+                margin-bottom: 1rem;
                 & > span:nth-child(1) {
                     font-family: Montserrat;
                     font-style: normal;
@@ -56,6 +77,7 @@
                 }
             }
             &-origin {
+                margin-bottom: 1rem;
                 & > span:nth-child(1) {
                     font-family: Montserrat;
                     font-style: normal;
@@ -75,6 +97,7 @@
                 }
             }
             &-life {
+                margin-bottom: 1rem;
                 & > span:nth-child(1) {
                     font-family: Montserrat;
                     font-style: normal;
@@ -94,7 +117,11 @@
                 }
             }
             &-adapt {
-                & > span:nth-child(1) {
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > span {
                     font-family: Montserrat;
                     font-style: normal;
                     font-weight: bold;
@@ -102,10 +129,19 @@
                     line-height: 20px;
                     /* identical to box height */
                     color: #000000;
+                }
+                & > div {
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
                 }
             }
             &-affect {
-                & > span:nth-child(1) {
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > span {
                     font-family: Montserrat;
                     font-style: normal;
                     font-weight: bold;
@@ -113,10 +149,19 @@
                     line-height: 20px;
                     /* identical to box height */
                     color: #000000;
+                }
+                & > div {
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
                 }
             }
             &-child {
-                & > span:nth-child(1) {
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > span {
                     font-family: Montserrat;
                     font-style: normal;
                     font-weight: bold;
@@ -124,10 +169,19 @@
                     line-height: 20px;
                     /* identical to box height */
                     color: #000000;
+                }
+                & > div {
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
                 }
             }
             &-groom {
-                & > span:nth-child(1) {
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > span {
                     font-family: Montserrat;
                     font-style: normal;
                     font-weight: bold;
@@ -135,10 +189,19 @@
                     line-height: 20px;
                     /* identical to box height */
                     color: #000000;
+                }
+                & > div {
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
                 }
             }
             &-intelligence {
-                & > span:nth-child(1) {
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > span {
                     font-family: Montserrat;
                     font-style: normal;
                     font-weight: bold;
@@ -146,10 +209,19 @@
                     line-height: 20px;
                     /* identical to box height */
                     color: #000000;
+                }
+                & > div {
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
                 }
             }
             &-health {
-                & > span:nth-child(1) {
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > span {
                     font-family: Montserrat;
                     font-style: normal;
                     font-weight: bold;
@@ -157,10 +229,19 @@
                     line-height: 20px;
                     /* identical to box height */
                     color: #000000;
+                }
+                & > div {
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
                 }
             }
             &-social {
-                & > span:nth-child(1) {
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > span {
                     font-family: Montserrat;
                     font-style: normal;
                     font-weight: bold;
@@ -169,9 +250,18 @@
                     /* identical to box height */
                     color: #000000;
                 }
+                & > div {
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
+                }
             }
             &-stranger {
-                & > span:nth-child(1) {
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > span {
                     font-family: Montserrat;
                     font-style: normal;
                     font-weight: bold;
@@ -179,6 +269,11 @@
                     line-height: 20px;
                     /* identical to box height */
                     color: #000000;
+                }
+                & > div {
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
                 }
             }
         }
@@ -202,8 +297,8 @@
             flex-wrap: wrap;
             justify-content: space-between;
             & div {
-                width: 235px;
-                height: 235px;
+                width: 220px;
+                height: 220px;
                 // border: 1px solid blue;
                 border-radius: 24px;
                 margin-bottom: 2.5rem;
@@ -213,6 +308,141 @@
                     object-fit: cover;
                     border-radius: 24px;
                 }
+            }
+        }
+        & > div:nth-child(3) {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .cat {
+        width: 90%;
+        &-top {
+            display: block;
+            width: 100%;
+            &-img {
+                & > div:nth-child(1) {
+                    display: none;
+                }
+                & > div:nth-child(2) {
+                    width: 100%;
+                    height: auto;
+                    // border: 1px solid blue;
+                    border-radius: 24px;
+                    margin-bottom: 1.5rem;
+                }
+            }
+            &-details {
+                // border: 1px solid blue;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .cat {
+        &-top {
+            &-details {
+                &-adapt {
+                    & > div {
+                        width: 60%;
+                    }
+                }
+                &-affect {
+                    & > div {
+                        width: 60%;
+                    }
+                }
+                &-child {
+                    & > div {
+                        width: 60%;
+                    }
+                }
+                &-groom {
+                    & > div {
+                        width: 60%;
+                    }
+                }
+                &-intelligence {
+                    & > div {
+                        width: 60%;
+                    }
+                }
+                &-health {
+                    & > div {
+                        width: 60%;
+                    }
+                }
+                &-social {
+                    & > div {
+                        width: 60%;
+                    }
+                }
+                &-stranger {
+                    & > div {
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .cat {
+        &-top {
+            &-details {
+                &-adapt {
+                    & > div {
+                        width: 40%;
+                    }
+                }
+                &-affect {
+                    & > div {
+                        width: 40%;
+                    }
+                }
+                &-child {
+                    & > div {
+                        width: 40%;
+                    }
+                }
+                &-groom {
+                    & > div {
+                        width: 40%;
+                    }
+                }
+                &-intelligence {
+                    & > div {
+                        width: 40%;
+                    }
+                }
+                &-health {
+                    & > div {
+                        width: 40%;
+                    }
+                }
+                &-social {
+                    & > div {
+                        width: 40%;
+                    }
+                }
+                &-stranger {
+                    & > div {
+                        width: 40%;
+                    }
+                }
+            }
+        }
+        &-other {
+            & > div:nth-child(2) {
+                display: none;
+            }
+            & > div:nth-child(3) {
+                display: block;
             }
         }
     }

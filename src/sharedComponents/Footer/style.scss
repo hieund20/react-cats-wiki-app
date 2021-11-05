@@ -1,19 +1,27 @@
 .footer {
     width: 80%;
     height: 100px;
-
-    margin: 0 auto;
     background: #000000;
     border-top-left-radius: 42px;
     border-top-right-radius: 42px;
 
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
     &-container {
         width: 86%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        & > div:nth-child(1) {
+            width: 25%;
+            // border: 1px solid blue;
+        }
         & > div:nth-child(2) {
+            // border: 1px solid blue;
+            // width: ;
             & > span {
                 font-family: Montserrat;
                 font-style: normal;
@@ -21,8 +29,75 @@
                 font-size: 18px;
                 line-height: 22px;
                 /* identical to box height */
-
                 color: #ffffff;
+                & > a {
+                    text-decoration: underline;
+                    color: #ffffff;
+                    &:hover {
+                        color: #b1a9a9 !important;
+                    }
+                    &:visited {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .footer {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .footer {
+        &-container {
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .footer {
+        height: 130px;
+        &-container {
+            // border: 1px solid blue;
+            display: block;
+            & > div:nth-child(1) {
+                height: 80px;
+                // border: 1px solid blue;
+            }
+            & > div:nth-child(2) {
+                // border: 1px solid blue;
+                // width: ;
+                text-align: center;
+                & > span {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footer {
+        &-container {
+            // border: 1px solid blue;
+            display: block;
+            width: 79%;
+            & > div:nth-child(1) {
+                height: 80px;
+                // border: 1px solid blue;
+            }
+            & > div:nth-child(2) {
+                // border: 1px solid blue;
+                // width: ;
+                text-align: center;
+                & > span {
+                    font-size: 12px;
+                }
             }
         }
     }

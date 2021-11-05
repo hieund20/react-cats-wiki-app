@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import { getAllBreeds, getCatDetails } from './apis/getCatDetails';
+import { getAllBreeds, getMostBreed } from './apis/getCatDetails';
 import './App.scss';
 import Home from './page/Home';
 import Header from './sharedComponents/Header';
-import queryString from 'query-string';
 import {
   BrowserRouter as Router, Route, Switch
 } from 'react-router-dom';
@@ -16,23 +15,18 @@ import Footer from './sharedComponents/Footer';
 function App() {
   const [mostBreeds, setMostBreeds] = useState([])
   const [allBreeds, setAllBreeds] = useState([])
-  const [filters, setFilters] = useState({
-    limit: 4,
-    page: 0
-  })
 
-  console.log('current limit', filters.limit);
 
   useEffect(() => {
-    const queryParams = queryString.stringify(filters, {
-      skipNull: true
-    })
-    getCatDetails(queryParams)
+
+    const queryParams = 'limit=4&page=0';
+
+    getMostBreed(queryParams)
       .then((res) => {
         console.log(res.data);
         setMostBreeds(res.data);
       })
-  }, [filters])
+  }, [])
 
   //Get all breeds to fill search box
   useEffect(() => {
@@ -42,19 +36,11 @@ function App() {
       })
   }, [])
 
-  const handleBackToHome = () => {
-    setFilters({
-      ...filters,
-      limit: 4
-    })
-  }
 
   return (
     <div className="app">
       <Router>
-        <Header
-          onBackToHome={handleBackToHome}
-        />
+        <Header />
         <Switch>
           <Route path="/" exact>
             <Home

@@ -39,22 +39,58 @@ a {
                 margin-bottom: 2rem;
             }
             & > .search-box {
-                outline: none;
+                outline: none !important;
                 background: #ffffff;
                 border-radius: 59px;
-                &:hover {
-                    outline: none;
+                border: none;
+                & > div:nth-child(1) {
+                    // border: none !important;
+                    // border: 1px solid red;
+                    & > div {
+                        // border: none !important;
+                        // border: 1px solid blue;
+                        & > input {
+                            font-family: Montserrat, sans-serif;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 22px;
+                            /* identical to box height */
+                            color: #291507;
+                        }
+                        &:hover {
+                            outline: none;
+                        }
+                        &:focus {
+                            border-radius: 59px;
+                            outline: none !important;
+                        }
+                        & > fieldset {
+                            // border: 1px solid greenyellow;
+                            & span {
+                                font-family: Montserrat, sans-serif;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 22px;
+                                /* identical to box height */
+                                color: #291507;
+                            }
+                        }
+                    }
                 }
-                &:focus {
-                    border-radius: 59px;
-                    outline: none;
+                & > div[role="presentation"] {
+                    background-color: #291507 !important;
+                    & a {
+                        color: #4d270c;
+                    }
                 }
             }
         }
     }
     &-most {
         // border: 1px solid blue;
-        height: 510px;
+        min-height: 31.875rem;
         background: #e3e1dc;
         border-bottom-right-radius: 25px;
         border-bottom-left-radius: 25px;
@@ -135,6 +171,7 @@ a {
                     text-align: center;
                     width: 200px;
                     height: 200px;
+                    margin-bottom: 3rem;
                     & > img {
                         // border: 1px solid blue;
                         border-radius: 24px;
@@ -161,6 +198,7 @@ a {
     }
     &-benefits {
         // border: 1px solid blue;
+        height: auto;
         & > div {
             // border: 1px solid blue;
             width: 85%;
@@ -195,11 +233,11 @@ a {
                 }
                 & > div:nth-child(3) {
                     // border: 1px solid blue;
-                    & > span {
+                    & > p {
                         font-family: Montserrat;
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 18px;
+                        font-size: 16px;
                         line-height: 22px;
                         color: #291507;
                     }
@@ -228,34 +266,42 @@ a {
                     // border: 1px solid green;
                     width: 50%;
                     margin-right: 1.5rem;
+                    height: 30rem;
                     & > div:nth-child(1) {
                         // border: 1px solid yellow;
+                        height: 11rem;
                         margin-bottom: 1.5rem;
                         & > div {
                             // border: 1px solid yellow;
-                            width: 273.52px;
-                            height: 167.08px;
+                            height: 11rem;
+                            border-radius: 24px;
                             & > img {
+                                border-radius: 24px;
+                                height: 100%;
+                                object-fit: cover;
                                 width: 100%;
                             }
                         }
                     }
                     & > div:nth-child(2) {
                         display: flex;
+                        height: 17rem;
                         justify-content: space-between;
                         // border: 1px solid red;
-                        width: 100%;
-                        & > div:nth-child(1) {
-                            width: 10%;
-                            // border: 1px solid red;
-                        }
+                        margin-right: 0;
+                        margin-left: auto;
                         & > div:nth-child(2) {
+                            // float: right;
                             // border: 1px solid red;
                             border-radius: 24px;
                             width: 195.49px;
-                            height: 293.24px;
+                            height: 17rem;
+                            border-radius: 24px;
                             & > img {
+                                border-radius: 24px;
+                                object-fit: cover;
                                 width: 100%;
+                                height: 100%;
                             }
                         }
                     }
@@ -265,11 +311,141 @@ a {
                     width: 50%;
                     & > div {
                         // border: 1px solid #ff6d05;
+                        height: 24rem;
                         border-radius: 24px;
                         margin-right: 0;
                         margin-left: auto;
                         & > img {
+                            border-radius: 24px;
+
+                            height: 100%;
+                            object-fit: cover;
                             width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1027px) {
+    .home {
+        width: 90%;
+        &-benefits {
+            & > div {
+                display: block;
+                & > div:nth-child(1) {
+                    width: 100%;
+                    margin-bottom: 2.5rem;
+                }
+                & > div:nth-child(2) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .home {
+        &-most {
+            &-container {
+                & > div:nth-child(2) {
+                    display: block;
+                    & > div:nth-child(1) {
+                        width: 100%;
+                        margin-bottom: 1rem;
+                    }
+                }
+                & > div:nth-child(3) {
+                    & > .card {
+                        border-radius: 24px;
+                        text-align: center;
+                        width: 130px;
+                        height: 130px;
+                        margin-bottom: 3rem;
+                        & > div {
+                            & > span {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .home {
+        &-benefits {
+            & > div {
+                & > div:nth-child(2) {
+                    // border: 1px solid blue;
+                    width: 100%;
+                    display: flex;
+                    height: 15rem;
+                    //Left clock
+                    & > div:nth-child(1) {
+                        // border: 1px solid green;
+                        width: 50%;
+                        margin-right: 0.5rem;
+                        height: 20rem;
+                        & > div:nth-child(1) {
+                            // border: 1px solid yellow;
+                            height: 5rem;
+                            margin-bottom: 1.5rem;
+                            & > div {
+                                // border: 1px solid yellow;
+                                height: 6rem;
+                                border-radius: 24px;
+                                & > img {
+                                    border-radius: 24px;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        & > div:nth-child(2) {
+                            display: flex;
+                            height: 11rem;
+                            justify-content: space-between;
+                            // border: 1px solid red;
+                            margin-right: 0;
+                            margin-left: auto;
+                            & > div:nth-child(2) {
+                                // float: right;
+                                // border: 1px solid red;
+                                border-radius: 24px;
+                                width: 100px;
+                                height: 11rem;
+                                border-radius: 24px;
+                                & > img {
+                                    border-radius: 24px;
+                                    object-fit: cover;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                    //Right block
+                    & > div:nth-child(2) {
+                        // border: 1px solid #ff6d05;
+                        & > div {
+                            // border: 1px solid #ff6d05;
+                            height: 15rem;
+                            border-radius: 24px;
+                            margin-right: 0;
+                            margin-left: auto;
+                            & > img {
+                                border-radius: 24px;
+                                height: 100%;
+                                object-fit: cover;
+                                width: 100%;
+                            }
                         }
                     }
                 }

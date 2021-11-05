@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import './style.scss';
-import { getCatDetails } from '../../apis/getCatDetails';
+import { getMostBreed } from '../../apis/getCatDetails';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-Top.propTypes = {
-};
-
-
-function Top(props) {
+function Top() {
     const [mostBreeds, setMostBreeds] = useState([])
-
 
     useEffect(() => {
         const queryParams = 'limit=10&page=0';
-        getCatDetails(queryParams)
+        getMostBreed(queryParams)
             .then((res) => {
-                console.log('test top');
-                console.log(res.data);
                 setMostBreeds(res.data);
             })
     }, [])
@@ -31,7 +24,10 @@ function Top(props) {
                     mostBreeds.map((breed) => (
                         <div>
                             <div>
-                                <img src={breed.image.url} alt="" />
+                                <LazyLoadImage
+                                    src={breed.image.url}
+                                    alt=""
+                                />
                             </div>
                             <div>
                                 <div>

@@ -2,7 +2,10 @@ header {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 1rem;
-    & > div {
-        // border: 1px solid blue;
+}
+
+@media screen and (max-width: 1090px) {
+    header {
+        width: 90%;
     }
 }

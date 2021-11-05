@@ -1,12 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './style.scss';
 
-Footer.propTypes = {
-
-};
-
-function Footer(props) {
+function Footer() {
     return (
         <div className="footer">
             <div className="footer-container">
@@ -23,7 +18,7 @@ function Footer(props) {
                 </div>
                 <div>
                     <span>
-                        © created by
+                        {`© created by `}
                         <a href="https://github.com/hieund20" target="_blank" rel="noreferrer">hieund</a> - devChallenge.io 2021
                     </span>
                 </div>

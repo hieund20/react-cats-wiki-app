@@ -60,3 +60,24 @@
         }
     }
 }
+
+@media screen and (max-width: 1090px) {
+    .top {
+        width: 90%;
+        &-breeds {
+            & > div {
+                display: block;
+                & > div:nth-child(1) {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 1rem;
+                    & > img {
+                    }
+                }
+                & > div:nth-child(2) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
