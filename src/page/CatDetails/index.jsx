@@ -11,7 +11,6 @@ import '../../effects/blur.scss';
 import './style.scss'
 
 
-
 function CatDetails() {
     const [breed, setBreed] = useState([])
     let { id } = useParams()
@@ -21,6 +20,7 @@ function CatDetails() {
             .then((res) => {
                 setBreed(res.data)
             })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
