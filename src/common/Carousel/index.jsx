@@ -20,13 +20,14 @@ function Carousels({ breed }) {
 
     return (
         <div className="carousel">
-            <Carousel>
+            <Carousel className="carousel-container">
                 {
                     breed.map((item) => (
                         <Paper>
                             <LazyLoadImage
                                 src={item.url}
                                 alt=""
+                                className="img"
                             />
                         </Paper>
                     ))

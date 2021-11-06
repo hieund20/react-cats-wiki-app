@@ -3,8 +3,9 @@
     border: 1px solid rgb(189, 189, 185);
     border-radius: 24px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    & > .Carousel-root-1 {
-        padding-bottom: 0.2rem;
+    &-container {
+        // border: 1px solid blue;
+        height: 25rem;
         & > .CarouselItem {
             & > div {
                 height: 20rem;
@@ -12,11 +13,11 @@
                     // border: 1px solid blue;
                     height: 20rem;
                     border-radius: 24px;
-                    & > img {
+                    & img {
                         border-radius: 24px;
                         width: 100%;
                         height: 100%;
-                        object-fit: contain;
+                        object-fit: contain !important;
                     }
                 }
             }
