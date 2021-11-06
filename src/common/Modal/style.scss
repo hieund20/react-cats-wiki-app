@@ -1,0 +1,27 @@
+.modal {
+    & .box {
+        & div.auto-complete-modal {
+            display: flex;
+            position: relative;
+            & div.auto-complete-modal-search {
+                & > span {
+                    position: absolute;
+                    left: 18.5rem;
+                    top: 1.2rem;
+                }
+            }
+        }
+    }
+    & a {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+        color: #000000;
+        &:visited {
+            color: #000000;
+        }
+    }
+}

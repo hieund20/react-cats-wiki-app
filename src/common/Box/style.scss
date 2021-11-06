@@ -1,0 +1,25 @@
+.box {
+    background-color: #fff;
+    height: 10rem;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    & > div:nth-child(1) {
+        width: 340px;
+        margin: 0 auto;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > span {
+            display: inline-block;
+            color: #291507;
+            &:focus {
+                color: #743508;
+            }
+        }
+    }
+}

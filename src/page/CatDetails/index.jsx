@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getBreedById } from '../../apis/getCatDetails';
-import './style.scss'
-import _ from 'lodash';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Rating from '../../common/Rating';
 import Carousels from '../../common/Carousel';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+
+import _ from 'lodash';
+
 import '../../effects/blur.scss';
+import './style.scss'
 
 
-function CatDetails({ scrollPosition }) {
+
+function CatDetails() {
     const [breed, setBreed] = useState([])
     let { id } = useParams()
 
@@ -33,7 +36,6 @@ function CatDetails({ scrollPosition }) {
                                 <LazyLoadImage
                                     src={breed[0].url}
                                     alt="cat"
-                                    effect="blur"
                                 />
                             </div>
                         </div>

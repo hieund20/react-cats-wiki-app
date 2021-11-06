@@ -1,15 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './style.scss';
 import { benefits, explain } from '../../data/content';
 import { FcLike } from 'react-icons/fc'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-Benefits.propTypes = {
+import './style.scss';
 
-};
-
-function Benefits(props) {
+function Benefits() {
     return (
         <div className="benefits">
             <div>

@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material'
-import './style.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+
+import './style.scss';
 import '../../effects/blur.scss';
 
 

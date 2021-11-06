@@ -1,13 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import './style.scss';
 import { Link } from 'react-router-dom';
-import { TextField, Autocomplete } from '@mui/material';
+import { TextField, Autocomplete, Modal } from '@mui/material';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Box } from '@mui/system';
+import PropTypes from 'prop-types';
+
 import cat1 from '../../images/cat1.png'
 import cat2 from '../../images/cat2.png'
 import cat3 from '../../images/cat3.png'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
+import modalStyle from '../../common/Modal/style.scss';
+import boxStyle from '../../common/Box/style.scss';
+import lgAutoCompleteStyle from '../../common/AutoComplete/lg-style.scss';
+import textFieldStyle from '../../common/TextField/style.scss';
+import smallAutoCompleteStyle from '../../common/AutoComplete/small-style.scss';
+import modalAutoCompleteStyle from '../../common/AutoComplete/modal-style.scss';
 
 Home.propTypes = {
     mostBreeds: PropTypes.array,
@@ -22,6 +30,10 @@ Home.defaultProps = {
 function Home(props) {
     const { mostBreeds, allBreeds } = props
 
+    const [openModal, setOpenModal] = useState(false);
+    const handleOpenModal = () => setOpenModal(true);
+    const handleCloseModal = () => setOpenModal(false);
+
     return (
         <div className='home'>
             <div className='home-hero'>
@@ -35,24 +47,117 @@ function Home(props) {
                         <path d="M90.6913 14.6517C90.6913 14.6517 94.8522 16.108 98.5971 15.2758C98.5971 15.2758 105.879 14.2356 106.503 14.0275C107.127 13.8195 114.201 13.4034 117.945 14.0275C117.945 14.0275 128.348 5.91369 122.523 2.37689C122.523 2.37689 120.026 3.62517 119.402 2.79298C119.168 2.48091 119.285 2.08107 119.522 1.70317C119.791 1.29255 120.155 0.953492 120.584 0.715303C121.013 0.477114 121.494 0.346958 121.984 0.336097C124.158 0.254703 128.054 1.03591 126.286 8.14394C125.782 10.1045 124.853 11.9304 123.566 13.4926C122.618 14.6606 121.638 16.277 122.106 17.5643C122.939 19.8529 123.147 23.3897 123.147 23.3897L126.059 27.7586C126.059 27.7586 127.724 33.1679 127.724 33.3759C127.724 33.584 125.46 34.0253 125.019 33.584C124.603 33.1679 125.643 32.3357 125.643 32.3357C125.643 32.3357 124.811 30.6713 123.355 30.2552C121.898 29.8391 117.945 28.3828 117.321 27.7586C116.697 27.1345 103.382 23.3897 99.6373 26.9265C97.5358 28.9341 95.3124 30.8101 92.9798 32.5437C92.9798 32.5437 91.9396 34.0001 90.6913 34.0001C89.443 34.0001 89.235 32.1276 90.6913 31.9196C92.1476 31.7115 94.2281 26.7184 94.2281 26.7184C94.2281 26.7184 94.8522 22.9736 91.7315 22.3494C90.0112 22.0054 88.9863 21.9774 88.4129 22.0216C88.1839 22.0407 87.9534 22.0134 87.7352 21.9414C87.517 21.8695 87.3154 21.7543 87.1426 21.6029C86.7714 21.2459 86.4388 20.8507 86.1505 20.4239C86.0744 20.3155 86.0254 20.1905 86.0076 20.0593C85.9897 19.9281 86.0035 19.7945 86.0479 19.6697C86.325 18.9134 86.5556 18.1408 86.7384 17.3563C86.9464 16.3161 88.6108 15.4839 88.6108 15.4839C88.6108 15.4839 89.0269 12.5712 89.6511 13.4034C89.9709 13.8412 90.3183 14.2581 90.6913 14.6517Z" fill="#fff" />
                         <path d="M90.6913 14.6517C90.6913 14.6517 94.8522 16.108 98.5971 15.2758C98.5971 15.2758 105.879 14.2356 106.503 14.0275C107.127 13.8195 114.201 13.4034 117.945 14.0275C117.945 14.0275 128.348 5.91369 122.523 2.37689C122.523 2.37689 120.026 3.62517 119.402 2.79298C119.168 2.48091 119.285 2.08107 119.522 1.70317C119.791 1.29255 120.155 0.953492 120.584 0.715303C121.013 0.477114 121.494 0.346958 121.984 0.336097C124.158 0.254703 128.054 1.03591 126.286 8.14394C125.782 10.1045 124.853 11.9304 123.566 13.4926C122.618 14.6606 121.638 16.277 122.106 17.5643C122.939 19.8529 123.147 23.3897 123.147 23.3897L126.059 27.7586C126.059 27.7586 127.724 33.1679 127.724 33.3759C127.724 33.584 125.46 34.0253 125.019 33.584C124.603 33.1679 125.643 32.3357 125.643 32.3357C125.643 32.3357 124.811 30.6713 123.355 30.2552C121.898 29.8391 117.945 28.3828 117.321 27.7586C116.697 27.1345 103.382 23.3897 99.6373 26.9265C97.5358 28.9341 95.3124 30.8101 92.9798 32.5437C92.9798 32.5437 91.9396 34.0001 90.6913 34.0001C89.443 34.0001 89.235 32.1276 90.6913 31.9196C92.1476 31.7115 94.2281 26.7184 94.2281 26.7184C94.2281 26.7184 94.8522 22.9736 91.7315 22.3494C90.0112 22.0054 88.9863 21.9774 88.4129 22.0216C88.1839 22.0407 87.9534 22.0134 87.7352 21.9414C87.517 21.8695 87.3154 21.7543 87.1426 21.6029C86.7714 21.2459 86.4388 20.8507 86.1505 20.4239C86.0744 20.3155 86.0254 20.1905 86.0076 20.0593C85.9897 19.9281 86.0035 19.7945 86.0479 19.6697C86.325 18.9134 86.5556 18.1408 86.7384 17.3563C86.9464 16.3161 88.6108 15.4839 88.6108 15.4839C88.6108 15.4839 89.0269 12.5712 89.6511 13.4034C89.9709 13.8412 90.3183 14.2581 90.6913 14.6517Z" fill="#fff" />
                     </svg>
-                    <div>
+                    <div className="title">
                         <span>Get to know more about your cat breed</span>
                     </div>
-                    <Autocomplete
-                        disablePortal
-                        className="search-box"
-                        freeSolo
-                        options={allBreeds}
-                        getOptionLabel={(option) => option.name}
-                        renderOption={(props, option) => (
-                            <Link to={`/${option.id}`} {...props}>{option.name}</Link>
-                        )}
-                        onChange={(e, value) => console.log(value)}
-                        sx={{ width: 300 }}
-                        renderInput={(params) => <TextField {...params} label="Enter your breed" />}
-                    />
+                    {/* Large Auto Complete */}
+                    <div className="auto-complete-lg">
+                        <Autocomplete
+                            sx={lgAutoCompleteStyle}
+                            disablePortal
+                            className="search-box-lg"
+                            freeSolo
+                            options={allBreeds}
+                            getOptionLabel={(option) => option.name}
+                            renderOption={(props, option) => (
+                                <Link to={`breed/${option.id}`} {...props}>
+                                    {option.name}
+                                </Link>
+                            )}
+                            renderInput={(params) =>
+                                <TextField {...params}
+                                    className="text-field"
+                                    label="Enter your breed"
+                                    sx={textFieldStyle}
+                                />}
+                        />
+                        <div className="auto-complete-lg-search">
+                            <span
+                                className="material-icons">
+                                search
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Small Auto Complete */}
+                    <div className="auto-complete-sm">
+                        <Autocomplete
+                            sx={smallAutoCompleteStyle}
+                            disablePortal
+                            className="search-box-small"
+                            freeSolo
+                            options={allBreeds}
+                            getOptionLabel={(option) => option.name}
+                            renderOption={(props, option) => (
+                                <Link to={`breed/${option.id}`} {...props}>
+                                    {option.name}
+                                </Link>
+                            )}
+                            renderInput={(params) =>
+                                <TextField {...params}
+                                    className="text-field"
+                                    label="Search"
+                                    onClick={() => handleOpenModal()}
+                                    sx={textFieldStyle} />}
+                        />
+                        <div className="auto-complete-sm-search">
+                            <span
+                                className="material-icons">
+                                search
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Modal Responsive */}
+                    <Modal
+                        open={openModal}
+                        sx={modalStyle}
+                        className="modal"
+                        onClose={handleCloseModal}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description">
+                        <Box
+                            className="box"
+                            sx={boxStyle}>
+                            {/* Small Auto Complete */}
+                            <div>
+                                <span></span>
+                                <span
+                                    className="material-icons"
+                                    onClick={() => handleCloseModal()}>
+                                    close
+                                </span>
+                            </div>
+                            <div className="auto-complete-modal">
+                                <Autocomplete
+                                    disablePortal
+                                    className="search-box-modal"
+                                    freeSolo
+                                    options={allBreeds}
+                                    getOptionLabel={(option) => option.name}
+                                    renderOption={(props, option) => (
+                                        <Link to={`breed/${option.id}`} {...props}>
+                                            {option.name}
+                                        </Link>
+                                    )}
+                                    sx={modalAutoCompleteStyle}
+                                    renderInput={(params) =>
+                                        <TextField {...params}
+                                            className="text-field"
+                                            label="Enter your breed"
+                                            sx={textFieldStyle} />} />
+                                <div className="auto-complete-modal-search">
+                                    <span
+                                        className="material-icons">
+                                        search
+                                    </span>
+                                </div>
+                            </div>
+                        </Box>
+                    </Modal>
                 </div>
             </div>
+
             <div className="home-most">
                 <div className="home-most-container">
                     <div>
@@ -91,6 +196,7 @@ function Home(props) {
                     </div>
                 </div>
             </div>
+
             <div className="home-benefits">
                 <div>
                     <div>

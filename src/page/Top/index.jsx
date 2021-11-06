@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './style.scss';
 import { getMostBreed } from '../../apis/getCatDetails';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+
+import './style.scss';
+
 
 function Top() {
     const [mostBreeds, setMostBreeds] = useState([])

@@ -3,9 +3,10 @@ a {
 }
 
 .home {
-    // border: 1px solid blue;
     width: 80%;
     margin: 0 auto;
+
+    //HERO
     &-hero {
         height: 400px;
         background-image: url("../../images/HeroImagesm.png");
@@ -16,12 +17,48 @@ a {
 
         border-top-right-radius: 25px;
         border-top-left-radius: 25px;
-
         display: flex;
         align-items: center;
         &-container {
             width: 86%;
             margin: 0 auto;
+            & > div.auto-complete-lg {
+                display: flex;
+                position: relative;
+                & > div.auto-complete-lg-search {
+                    & > span {
+                        position: absolute;
+                        left: 15rem;
+                        top: 1rem;
+                    }
+                }
+            }
+            & > div.auto-complete-sm {
+                display: flex;
+                position: relative;
+                & > div.search-box-small {
+                    display: none;
+                }
+                & > div.auto-complete-sm-search {
+                    & > span {
+                        position: absolute;
+                        left: 5.5rem;
+                        top: 1rem;
+                    }
+                }
+            }
+            a {
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+                /* identical to box height */
+                color: #000000;
+                &:visited {
+                    color: #000000;
+                }
+            }
             & > svg {
                 // border: 1px solid blue;
                 margin-bottom: 1rem;
@@ -38,56 +75,10 @@ a {
                 }
                 margin-bottom: 2rem;
             }
-            & > .search-box {
-                outline: none !important;
-                background: #ffffff;
-                border-radius: 59px;
-                border: none;
-                & > div:nth-child(1) {
-                    // border: none !important;
-                    // border: 1px solid red;
-                    & > div {
-                        // border: none !important;
-                        // border: 1px solid blue;
-                        & > input {
-                            font-family: Montserrat, sans-serif;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 18px;
-                            line-height: 22px;
-                            /* identical to box height */
-                            color: #291507;
-                        }
-                        &:hover {
-                            outline: none;
-                        }
-                        &:focus {
-                            border-radius: 59px;
-                            outline: none !important;
-                        }
-                        & > fieldset {
-                            // border: 1px solid greenyellow;
-                            & span {
-                                font-family: Montserrat, sans-serif;
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 18px;
-                                line-height: 22px;
-                                /* identical to box height */
-                                color: #291507;
-                            }
-                        }
-                    }
-                }
-                & > div[role="presentation"] {
-                    background-color: #291507 !important;
-                    & a {
-                        color: #4d270c;
-                    }
-                }
-            }
         }
     }
+
+    //MOST (TOP 10 BREED)
     &-most {
         // border: 1px solid blue;
         min-height: 31.875rem;
@@ -141,7 +132,6 @@ a {
                 }
                 & > div:nth-child(2) {
                     // border: 2px solid blue;
-                    // width: 30%;
                     & > a {
                         text-decoration: none;
                         font-family: Montserrat;
@@ -196,6 +186,8 @@ a {
             }
         }
     }
+
+    //BENEFIT
     &-benefits {
         // border: 1px solid blue;
         height: auto;
@@ -291,7 +283,6 @@ a {
                         margin-right: 0;
                         margin-left: auto;
                         & > div:nth-child(2) {
-                            // float: right;
                             // border: 1px solid red;
                             border-radius: 24px;
                             width: 195.49px;
@@ -329,6 +320,8 @@ a {
     }
 }
 
+//RESPONSIVE DESIGN
+//WIDTH: 1027px
 @media screen and (max-width: 1027px) {
     .home {
         width: 90%;
@@ -347,8 +340,41 @@ a {
     }
 }
 
+//WIDTH: 560px
 @media screen and (max-width: 560px) {
     .home {
+        &-hero {
+            height: 150px;
+            padding-bottom: 2rem;
+            & svg {
+                width: 150px;
+                height: 50px;
+                margin-bottom: 0;
+            }
+            &-container {
+                padding-top: 4px;
+                height: 140px;
+                & > div.title {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    height: 9px;
+                    & > span {
+                        font-size: 11px;
+                    }
+                }
+                & > div.auto-complete-lg {
+                    & > .search-box-lg {
+                        display: none;
+                    }
+                }
+                & > div.auto-complete-sm {
+                    margin-top: 0;
+                    & > div.search-box-small {
+                        display: block;
+                    }
+                }
+            }
+        }
         &-most {
             &-container {
                 & > div:nth-child(2) {
@@ -377,6 +403,7 @@ a {
     }
 }
 
+//WIDTH: 400px
 @media screen and (max-width: 400px) {
     .home {
         &-benefits {
@@ -386,7 +413,8 @@ a {
                     width: 100%;
                     display: flex;
                     height: 15rem;
-                    //Left clock
+
+                    //LEFT BLOCK
                     & > div:nth-child(1) {
                         // border: 1px solid green;
                         width: 50%;
@@ -416,7 +444,6 @@ a {
                             margin-right: 0;
                             margin-left: auto;
                             & > div:nth-child(2) {
-                                // float: right;
                                 // border: 1px solid red;
                                 border-radius: 24px;
                                 width: 100px;
@@ -431,7 +458,7 @@ a {
                             }
                         }
                     }
-                    //Right block
+                    //RIGHT BLOCK
                     & > div:nth-child(2) {
                         // border: 1px solid #ff6d05;
                         & > div {

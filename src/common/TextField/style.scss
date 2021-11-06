@@ -1,0 +1,27 @@
+.text-field {
+    & fieldset {
+        border-radius: 59px;
+        outline: none;
+        border: none;
+    }
+    & label {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+
+        color: #6d4f39;
+    }
+    & input {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+
+        color: #291507;
+    }
+}
