@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './style.scss';
 import { Link } from 'react-router-dom';
 import { TextField, Autocomplete, Modal } from '@mui/material';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Box } from '@mui/system';
 import PropTypes from 'prop-types';
 
@@ -183,9 +182,9 @@ function Home(props) {
                         {
                             mostBreeds.map((breed) => (
                                 <div className="card">
-                                    <LazyLoadImage
+                                    <img
                                         src={breed.image.url}
-                                        alt=""
+                                        alt="breed"
                                     />
                                     <div>
                                         <span>{breed.name}</span>
@@ -224,27 +223,27 @@ function Home(props) {
                         <div>
                             <div>
                                 <div>
-                                    <LazyLoadImage
+                                    <img
                                         src={cat1}
-                                        alt="cat"
+                                        alt="breed"
                                     />
                                 </div>
                             </div>
                             <div>
                                 <div></div>
                                 <div>
-                                    <LazyLoadImage
+                                    <img
                                         src={cat2}
-                                        alt="cat"
+                                        alt="breed"
                                     />
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <LazyLoadImage
+                                <img
                                     src={cat3}
-                                    alt="cat"
+                                    alt="breed"
                                 />
                             </div>
                         </div>

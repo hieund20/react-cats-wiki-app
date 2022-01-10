@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import './style.scss';
 import '../../effects/blur.scss';
@@ -24,11 +23,10 @@ function Carousels({ breed }) {
                 {
                     breed.map((item) => (
                         <Paper>
-                            <LazyLoadImage
+                            <img 
                                 src={item.url}
                                 alt=""
-                                className="img"
-                            />
+                                className="img"/>
                         </Paper>
                     ))
                 }

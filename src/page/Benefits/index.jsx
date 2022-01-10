@@ -1,7 +1,6 @@
 import React from 'react';
 import { benefits, explain } from '../../data/content';
 import { FcLike } from 'react-icons/fc'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import './style.scss';
 
@@ -12,9 +11,9 @@ function Benefits() {
                 <span>Benefits</span>
             </div>
             <div>
-                <LazyLoadImage
+                <img
                     src="https://cdn2.thecatapi.com/images/VXppGG5rK.jpg"
-                    alt=""
+                    alt="breed-benefit"
                 />
             </div>
             <div>

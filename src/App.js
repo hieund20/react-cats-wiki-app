@@ -12,7 +12,6 @@ import CatDetails from './page/CatDetails';
 import Footer from './sharedComponents/Footer';
 import NotFound from './page/NotFound';
 
-
 import './App.scss';
 
 

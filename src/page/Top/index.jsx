@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getMostBreed } from '../../apis/getCatDetails';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import './style.scss';
 
@@ -26,9 +25,9 @@ function Top() {
                     mostBreeds.map((breed) => (
                         <div>
                             <div>
-                                <LazyLoadImage
+                                <img
                                     src={breed.image.url}
-                                    alt=""
+                                    alt="breed-cat-top-10"
                                 />
                             </div>
                             <div>

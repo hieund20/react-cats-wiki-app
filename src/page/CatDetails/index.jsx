@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getBreedById } from '../../apis/getCatDetails';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Rating from '../../common/Rating';
 import Carousels from '../../common/Carousel';
 
@@ -33,7 +32,7 @@ function CatDetails() {
                             <div>
                             </div>
                             <div>
-                                <LazyLoadImage
+                                <img
                                     src={breed[0].url}
                                     alt="cat"
                                 />
@@ -103,7 +102,7 @@ function CatDetails() {
                             {
                                 breed.slice(1).map((image) => (
                                     <div>
-                                        <LazyLoadImage
+                                        <img
                                             src={image.url}
                                             alt=""
                                             effect="blur"
