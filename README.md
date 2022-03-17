@@ -5,6 +5,7 @@
 </div>
 
 <h2>Overview</h2>
+<img src="https://res.cloudinary.com/dna6tju5f/image/upload/v1647491728/Github%20project%20overview/cat-wiki-overview_jpk7pe.png" alt="overview-image"/>
 
 <h2>How To Use</h2>
 
