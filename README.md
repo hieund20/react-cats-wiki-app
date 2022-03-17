@@ -1,6 +1,6 @@
 <h1>Cat Wiki App</h1>
 
-<p>Solution for challenge from <a href="https://devchallenges.io/">devchallenges.io</a><p>
+<p>Practice for challenge from <a href="https://devchallenges.io/">devchallenges.io</a><p>
 <div align="center">
 <a href="https://react-cats-wiki-app.vercel.app/">DEMO</a> | <a href="https://devchallenges.io/solutions/N8DBXjTGvgPYtpnhXkBh">SOLUTION</a> | <a href="https://devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt">CHALLENGE</a>
 </div>
